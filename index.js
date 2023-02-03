@@ -10,7 +10,7 @@ const Engineer = require("./lib/Engineer");
 const { type } = require("os");
 const { validate } = require("@babel/types");
 const { isTypedArray } = require("util/types");
-const teamMember =[]
+const teamMember = []
 //function menuApp() {
 
 
@@ -22,21 +22,6 @@ const createTeam = () => {
         inquirer
                 .prompt([
 
-                        // {
-                        //         type: "input",
-                        //         message: "What is your name?",
-                        //         name: "your name"
-                        // },
-                        // {
-                        //         type: "input",
-                        //         message: "what is your id number?",
-                        //         name: "id number"
-                        // },
-                        // {
-                        //         type: "input",
-                        //         message: "what is your email?",
-                        //         name: "email"
-                        // },
                         {
                                 type: "list",
                                 message: "what is your role",
@@ -49,11 +34,11 @@ const createTeam = () => {
 
                 .then((answers) => {
                         // Use user feedback for... whatever!!
-                        console.log (answers)
-                        if(answers.role === "Manager"){
+                        console.log(answers)
+                        if (answers.role === "Manager") {
                                 createManager()
                         }
-                        else if (answers.role == "Engineer"){
+                        else if (answers.role == "Engineer") {
                                 createEngineer()
                         }
 
@@ -61,49 +46,15 @@ const createTeam = () => {
                                 addIntern()
                         }
 
-                      })
-                      .catch((error) => {
+                })
+                .catch((error) => {
                         if (error.isTtyError) {
-                          // Prompt couldn't be rendered in the current environment
+                                // Prompt couldn't be rendered in the current environment
                         } else {
-                          // Something else went wrong
+                                // Something else went wrong
                         }
-                      });
-
-        //make prompter that asks which team member you want to add
-        //depending on the answer you will either run
-        //create Engineer or add intern
-        //console.log("build your team")
-        // inquirer
-        // .prompt([{
-        //         type: "input",
-        //         name: "team memeber",
-        //         message: " select team memeber?",
-        // validate: (answer) => {
-        //         if (answer !== "") {
-        //                 return true;
-        //         }
-        //         return "engineer"
-
-        // type:"input"
-        // name:"select"
-
+                });
 }
-
-//}
-
-//if you dont want to add anything else you will then run
-//buildTeam
-
-
-
-
-
-
-
-
-
-
 
 function buildTeam() {
 
@@ -111,32 +62,81 @@ function buildTeam() {
         //         fs.mkdirSync(DIST_DIR);
         // }
         const distPath = "./dist/team.html"
-        fs.writeFileSync(distPath, render(teamMember), "uutf-8");
+        fs.writeFileSync(distPath, render(teamMember), "utf-8");
 
 
 }
 
-function render (team){
-        console.log (team)
-        const cards =[]
-        team.map(employee =>{
+function render(team) {
+        console.log(team)
+        cards.toString();
+        let text = cards.join()
+        team.map(employee => {
                 console.log(employee)
-                if (employee.getRole()== "Manager"){
+                if (employee.getRole() == "Manager") {
                         return
+
                 }
         })
         //map the employees to different arrays depending on their role
 
         //after the mapping insert the employees in each different type of card
+        //const render manager = (manager =>)
 
 
-        
 
-        
+
 
         //cards.push() the array of cards with interns, then do the same for cards of engineers and managers
+        cards.push(
+                employee
+                        .filter((employee) => employee.getrole) == "Manager")
+                .map((manager) => renderManager(manager));
+
+        cards.push(
+                employee
+                        .filter((employee) => employee.getrole) == "Engineer")
+                .map((engineer) => renderEngineer(engineer)).join("");
+
+        cards.push(
+                employee
+                        .filter((employee) => employee.getrole) == "Intern")
+                .map((intern) => renderIntern(intern)).join("");
 
         //make the cards array into a string .join()
+                function renderManager(manager){
+                        return `
+                        <div class="Manager">
+        <h1>Manager</h1>
+        <div class="name">${manager.getName()}</div>
+        <div class="id">${manager.getId()}</div>
+        <div class="email">${manager.getEmail()}</div>
+        <div class="officeNumber">${manager.getOfficeNumber()}</div>
+    </div>`
+                };
+
+                function renderEngineer(engineer){
+                        return `
+                        <div class="Engineer">
+        <h1>Engineer</h1>
+        <div class="name">${engineer.getName()}</div>
+        <div class="id">${engineer.getId()}</div>
+        <div class="email">${engineer.getEmail()}</div>
+        <div class="github">${engineer.getGithub()}</div>
+    </div>
+                        `
+                };
+
+                function renderIntern(Intern){
+                        return `
+                        <div class="Intern">
+                        <h1>Intern</h1>
+                    </div>
+                    <div class="name">${intern.getName()}</div>
+                    <div class="id">${intern.getId()}</div>
+                    <div class="email">${intern.getEmail()}</div>
+                    <div class= "school">${intern.getSchool()}</div>    `
+                }
 
 
         return `
@@ -149,8 +149,30 @@ function render (team){
     <title>Document</title>
 </head>
 <body>
-    <main class="container">
+    <main class="cards">
 <section class="row">
+<div class="Manager">
+        <h1>Manager</h1>
+        <div class="name">${manager.getName()}</div>
+        <div class="id">${manager.getId()}</div>
+        <div class="email">${manager.getEmail()}</div>
+        <div class="officeNumber">${manager.getOfficeNumber()}</div>
+    </div>
+    <div class="Engineer">
+        <h1>Engineer</h1>
+        <div class="name">${engineer.getName()}</div>
+        <div class="id">${engineer.getId()}</div>
+        <div class="email">${engineer.getEmail()}</div>
+        <div class="github">${engineer.getGithub()}</div>
+    </div>
+    <div class="Intern">
+                        <h1>Intern</h1>
+                    </div>
+                    <div class="name">${intern.getName()}</div>
+                    <div class="id">${intern.getId()}</div>
+                    <div class="email">${intern.getEmail()}</div>
+                    <div class= "school">${intern.getSchool()}</div>
+
     ${cards}
 </section>
 
@@ -292,7 +314,7 @@ function createEngineer() {
 
                 ])
                 .then((answer) => {
-                        const engineer = new engineer(
+                        const engineer = new Engineer(
                                 answer.engineerName,
                                 answer.engineerId,
                                 answer.engineerEmail,
@@ -435,15 +457,15 @@ const addNewMember = function () {
                 .then((answers) => {
                         // Use user feedback for... whatever!!
                         console.log(answers)
-                        if(answers.addmemeber== "Add a new memeber to team"){
+                        if (answers.addmemeber == "Add a new memeber to team") {
                                 createTeam()
                         }
 
-                        else{
+                        else {
                                 buildTeam()
-                                
+
                         }
-                          
+
                 })
                 .catch((error) => {
                         if (error.isTtyError) {
