@@ -104,8 +104,8 @@ function render(team) {
                 .map((intern) => renderIntern(intern)).join("");
 
         //make the cards array into a string .join()
-                function renderManager(manager){
-                        return `
+        function renderManager(manager) {
+                return `
                         <div class="Manager">
         <h1>Manager</h1>
         <div class="name">${manager.getName()}</div>
@@ -113,10 +113,10 @@ function render(team) {
         <div class="email">${manager.getEmail()}</div>
         <div class="officeNumber">${manager.getOfficeNumber()}</div>
     </div>`
-                };
+        };
 
-                function renderEngineer(engineer){
-                        return `
+        function renderEngineer(engineer) {
+                return `
                         <div class="Engineer">
         <h1>Engineer</h1>
         <div class="name">${engineer.getName()}</div>
@@ -125,10 +125,10 @@ function render(team) {
         <div class="github">${engineer.getGithub()}</div>
     </div>
                         `
-                };
+        };
 
-                function renderIntern(Intern){
-                        return `
+        function renderIntern(Intern) {
+                return `
                         <div class="Intern">
                         <h1>Intern</h1>
                     </div>
@@ -136,7 +136,7 @@ function render(team) {
                     <div class="id">${intern.getId()}</div>
                     <div class="email">${intern.getEmail()}</div>
                     <div class= "school">${intern.getSchool()}</div>    `
-                }
+        }
 
 
         return `
