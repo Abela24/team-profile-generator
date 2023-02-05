@@ -12,13 +12,10 @@ const { validate } = require("@babel/types");
 const { isTypedArray } = require("util/types");
 const teamMember = []
 //function menuApp() {
-
-
-
 //function createTeam(){
 //created question to create and select team memebers
 const createTeam = () => {
-        //const answer =  
+        
         inquirer
                 .prompt([
 
@@ -83,10 +80,6 @@ function render(team) {
         //after the mapping insert the employees in each different type of card
         //const render manager = (manager =>)
 
-
-
-
-
         //cards.push() the array of cards with interns, then do the same for cards of engineers and managers
         cards.push(
                 employee
@@ -138,7 +131,7 @@ function render(team) {
                     <div class= "school">${intern.getSchool()}</div>    `
         }
 
-
+//returning data into html page
         return `
         <!DOCTYPE html>
 <html lang="en">
@@ -404,45 +397,6 @@ function addIntern() {
 
 
 
-
-
-
-
-//Team profile
-//const team 
-
-// const addManager = () => {
-//         return inquirer.prompt([{
-
-//                 type: "input",
-//                 name: "manager name",
-//                 message: "what is managers name "
-//         },
-
-//         {
-//                 type: "type",
-//                 name: "ID number",
-//                 message: "what is managers employee ID number"
-
-//         },
-//         {
-
-//                 type: "imput",
-//                 name: "email",
-//                 message: "what is managers email?"
-//         },
-//         {
-//                 type: "input",
-//                 name: "office number",
-//                 message: "what is managers office number"
-//         }
-
-
-
-
-
-//         ])
-// }
 const addNewMember = function () {
 
         inquirer
