@@ -122,7 +122,7 @@ function render(team) {
         //cards.push() the array of cards with interns, then do the same for cards of engineers and managers
         // cards.push(
         //         employee
-        //                 .filter((employee) => employee.getrole) == "Manager")
+        //       i          .filter((employee) => employee.getrole) == "Manager")
         //         .map((manager) => renderManager(manager));
 
         // cards.push(
@@ -178,7 +178,7 @@ function render(team) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href="style.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -189,6 +189,7 @@ function render(team) {
 
     </main>
 <script src="index.js"></script>
+<link rel ="stylesheet" href="style.css">
 </body>
 
 </html>
