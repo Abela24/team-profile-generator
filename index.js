@@ -56,7 +56,7 @@ function buildTeam() {
         // if (fs.existsSync(DIST_DIR)) {
         //         fs.mkdirSync(DIST_DIR);
         // }
-        const distPath = "./dist/team.html"
+        const distPath = "./dist/teaml.html"
         fs.writeFileSync(distPath, render(teamMember), "utf-8");
 
 
