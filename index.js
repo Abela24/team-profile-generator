@@ -71,12 +71,12 @@ function render(team) {
                 if (employee.getRole() == "Manager") {
                 
                                 return `
-                                        <div class="Manager">
+                                        <div class="Manager cards">
                         <h1>Manager</h1>
-                        <div class="name">${employee.getName()}</div>
-                        <div class="id">${employee.getId()}</div>
-                        <div class="email">${employee.getEmail()}</div>
-                        <div class="officeNumber">${employee.getOfficeNumber()}</div>
+                        <div class="name">Name:${employee.getName()}</div>
+                        <div class="id"> ID:${employee.getId()}</div>
+                        <div class="email">Email: ${employee.getEmail()}</div>
+                        <div class="officeNumber">Office Number:${employee.getOfficeNumber()}</div>
                     </div>`
                 }
 
@@ -84,12 +84,12 @@ function render(team) {
                 else if (employee.getRole()== 'Engineer'){
                        
                                 return `
-                                        <div class="Engineer">
+                                        <div class="Engineer cards">
                         <h1>Engineer</h1>
-                        <div class="name">${employee.getName()}</div>
-                        <div class="id">${employee.getId()}</div>
-                        <div class="email">${employee.getEmail()}</div>
-                        <div class="github">${employee.getGithub()}</div>
+                        <div class="name">Name: ${employee.getName()}</div>
+                        <div class="id">ID: ${employee.getId()}</div>
+                        <div class="email">Email: ${employee.getEmail()}</div>
+                        <div class="github">Github: ${employee.getGithub()}</div>
                     </div>
                                         `
                         }
@@ -97,11 +97,11 @@ function render(team) {
                         else if(employee.getRole()== "Intern"){
                                 
                                         return `
-                                                <div class="Engineer">
+                                                <div class="Intern cards">
                                 <h1>Engineer</h1>
-                                <div class="name">${employee.getName()}</div>
-                                <div class="id">${employee.getId()}</div>
-                                <div class="email">${employee.getEmail()}</div>
+                                <div class="name">Name: ${employee.getName()}</div>
+                                <div class="id"> ID: ${employee.getId()}</div>
+                                <div class="email">Email: ${employee.getEmail()}</div>
                                 <div class="github">${employee.getGithub()}</div>
                             </div>
                                                 `
@@ -182,7 +182,7 @@ function render(team) {
     <title>Document</title>
 </head>
 <body>
-    <main class="cards">
+   
 <section class="row">
     ${cardString}
 </section>
