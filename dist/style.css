@@ -13,10 +13,18 @@ border: 30px;
     border-width: 5px;
 
 } */
+.title{
+    background-color: lightpink;
+    height:100px;
+    justify-content: center;
+}
 
 .row{
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
+    padding-top: 300px;
+    margin-bottom: 100px;
+    
 }
 
 
@@ -24,15 +32,23 @@ border: 30px;
 padding-left: 20px ;
 border: 10px solid blue;
 height: 200px;
-width: 200px;
+width: 220px;
+font-size: medium;
+flex-direction: row;
+margin-bottom: 50px;
 
 }
+
 
 .Manager{
     padding-left: 20px ;
     border: 10px solid lightcoral;
     height: 200px;
-    width: 200px;
+    width: 220px;
+    padding-top: 10px;
+    font-size: medium;
+    position: relative;
+    margin-bottom: 100px;
 
 }
 
@@ -40,7 +56,7 @@ width: 200px;
     padding-left: 20px ;
     border: 10px solid red;
     height: 200px;
-    width: 200px;
+    width: 220px;
 }
 
 .name{
