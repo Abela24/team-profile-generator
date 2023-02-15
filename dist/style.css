@@ -16,7 +16,12 @@ border: 30px;
 .title{
     background-color: lightpink;
     height:100px;
-    justify-content: center;
+    margin-left: 300px;
+    border-left: 600px;
+    border-right: 600px;
+    width: 900px;
+    flex-direction: row;
+    justify-items: center;
 }
 
 .row{

@@ -13,7 +13,7 @@ const teamMember = []
 //function createTeam(){
 //created question to create and select team memebers
 const createTeam = () => {
-        
+
         inquirer
                 .prompt([
 
@@ -53,24 +53,22 @@ const createTeam = () => {
 
 function buildTeam() {
 
-        // if (fs.existsSync(DIST_DIR)) {
-        //         fs.mkdirSync(DIST_DIR);
-        // }
+        
         const distPath = "./dist/teaml.html"
         fs.writeFileSync(distPath, render(teamMember), "utf-8");
 
 
 }
-
+//rendering team function
 function render(team) {
-        console.log('this is the team',team)
-      
-   
-     const cards= team.map(employee => {
+        console.log('this is the team', team)
+
+        //creating cards for each employees
+        const cards = team.map(employee => {
                 console.log(employee)
                 if (employee.getRole() == "Manager") {
-                
-                                return `
+                        //returns data on cards
+                        return `
                                         <div class="Manager cards">
                         <h1>Manager</h1>
                         <div class="name">Name:${employee.getName()}</div>
@@ -80,10 +78,10 @@ function render(team) {
                     </div>`
                 }
 
-                
-                else if (employee.getRole()== 'Engineer'){
-                       
-                                return `
+
+                else if (employee.getRole() == 'Engineer') {
+
+                        return `
                                         <div class="Engineer cards">
                         <h1>Engineer</h1>
                         <div class="name">Name: ${employee.getName()}</div>
@@ -92,11 +90,11 @@ function render(team) {
                         <div class="github">Github: ${employee.getGithub()}</div>
                     </div>
                                         `
-                        }
+                }
 
-                        else if(employee.getRole()== "Intern"){
-                                
-                                        return `
+                else if (employee.getRole() == "Intern") {
+
+                        return `
                                                 <div class="Intern cards">
                                 <h1>Engineer</h1>
                                 <div class="name">Name: ${employee.getName()}</div>
@@ -105,72 +103,18 @@ function render(team) {
                                 <div class="github">${employee.getGithub()}</div>
                             </div>
                                                 `
-                                }
+                }
 
-                        }
-                )
-        
+        }
+        )
 
-     const cardString=cards.join()
 
-     console.log(cardString)
-        //map the employees to different arrays depending on their role
+        const cardString = cards.join()
 
-        //after the mapping insert the employees in each different type of card
-        //const render manager = (manager =>)
+        console.log(cardString)
 
-        //cards.push() the array of cards with interns, then do the same for cards of engineers and managers
-        // cards.push(
-        //         employee
-        //       i          .filter((employee) => employee.getrole) == "Manager")
-        //         .map((manager) => renderManager(manager));
 
-        // cards.push(
-        //         employee
-        //                 .filter((employee) => employee.getrole) == "Engineer")
-        //         .map((engineer) => renderEngineer(engineer)).join("");
-
-        // cards.push(
-        //         employee
-        //                 .filter((employee) => employee.getrole) == "Intern")
-        //         .map((intern) => renderIntern(intern)).join("");
-
-        //make the cards array into a string .join()
-//         function renderManager(manager) {
-//                 return `
-//                         <div class="Manager">
-//         <h1>Manager</h1>
-//         <div class="name">${manager.getName()}</div>
-//         <div class="id">${manager.getId()}</div>
-//         <div class="email">${manager.getEmail()}</div>
-//         <div class="officeNumber">${manager.getOfficeNumber()}</div>
-//     </div>`
-//         };
-
-//         function renderEngineer(engineer) {
-//                 return `
-//                         <div class="Engineer">
-//         <h1>Engineer</h1>
-//         <div class="name">${engineer.getName()}</div>
-//         <div class="id">${engineer.getId()}</div>
-//         <div class="email">${engineer.getEmail()}</div>
-//         <div class="github">${engineer.getGithub()}</div>
-//     </div>
-//                         `
-//         };
-
-//         function renderIntern(Intern) {
-//                 return `
-//                         <div class="Intern">
-//                         <h1>Intern</h1>
-//                     </div>
-//                     <div class="name">${intern.getName()}</div>
-//                     <div class="id">${intern.getId()}</div>
-//                     <div class="email">${intern.getEmail()}</div>
-//                     <div class= "school">${intern.getSchool()}</div>    `
-//         }
-
-//returning data into html page
+        //returning data into html page
         return `
         <!DOCTYPE html>
 <html lang="en">
@@ -464,14 +408,7 @@ const addNewMember = function () {
 
 
 
-//then(response)
 
-//promptQuestion();
-
-// function createTeam() {
-//         console.log("new member", teamMember)
-//         fs.writeFileSync("./dist/team.html", generateTeam(teamMember))
-// }
 createTeam()
 
 
