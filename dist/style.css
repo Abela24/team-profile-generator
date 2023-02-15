@@ -1,5 +1,5 @@
 body{
-border: 30px;
+background-color: antiquewhite;
 }
 
 /* .row {
@@ -13,22 +13,23 @@ border: 30px;
     border-width: 5px;
 
 } */
+
+
 .title{
     background-color: lightpink;
     height:100px;
-    margin-left: 300px;
-    border-left: 600px;
-    border-right: 600px;
-    width: 900px;
+    width: 1500px;
     flex-direction: row;
     justify-items: center;
+    align-items: center;
+    display: block;
 }
 
 .row{
     flex-direction: row;
     display: flex;
     padding-top: 300px;
-    margin-bottom: 100px;
+justify-content: space-evenly;
     
 }
 
@@ -41,7 +42,8 @@ width: 220px;
 font-size: medium;
 flex-direction: row;
 margin-bottom: 50px;
-
+padding-left: 10px;
+padding-top: 10px;
 }
 
 
